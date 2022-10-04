@@ -7,7 +7,7 @@ const Skills = () => {
         <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Skills
         </p>
-        <h2 className="py-4">O que eu posso fazer</h2>
+        <h2 className="py-4">O que eu sei</h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <SkillItem image="/../public/assets/skills/html.png" title="HTML" />
