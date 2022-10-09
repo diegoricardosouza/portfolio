@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
+import { motion } from 'framer-motion'
 
 const Navbar = () => {
   const [nav, setNav] = useState(false)
@@ -53,18 +54,48 @@ const Navbar = () => {
       }
     >
       <div className="flex justify-between items-center w-full h-full px-2 md:px-5 2xl:px-16">
-        <Link href="/">
-          <a>
-            <Image
-              src="/../public/assets/navLogo.png"
-              alt="Logo"
-              width="125"
-              height="50"
-            />
-          </a>
-        </Link>
+        <motion.div
+          initial={{
+            x: -500,
+            opacity: 0,
+            scale: 0.5
+          }}
+          animate={{
+            x: 0,
+            opacity: 1,
+            scale: 1
+          }}
+          transition={{
+            duration: 1
+          }}
+        >
+          <Link href="/">
+            <a>
+              <Image
+                src="/../public/assets/navLogo.png"
+                alt="Logo"
+                width="125"
+                height="50"
+              />
+            </a>
+          </Link>
+        </motion.div>
 
-        <div>
+        <motion.div
+          initial={{
+            x: 500,
+            opacity: 0,
+            scale: 0.5
+          }}
+          animate={{
+            x: 0,
+            opacity: 1,
+            scale: 1
+          }}
+          transition={{
+            duration: 1
+          }}
+        >
           <ul style={{ color: `${linkColor}` }} className="hidden md:flex">
             <li className="ml-10 text-sm uppercase hover:border-b">
               <Link href="/">Home</Link>
@@ -90,7 +121,7 @@ const Navbar = () => {
           <div className="md:hidden" onClick={handleNav}>
             <AiOutlineMenu size={25} />
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <div
