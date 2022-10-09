@@ -1,8 +1,14 @@
+import { motion } from 'framer-motion'
 import SkillItem from '../SkillItem'
 
 const Skills = () => {
   return (
-    <div id="skills" className="w-full lg:h-screen p-2">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1.5 }}
+      className="w-full lg:h-screen p-2"
+    >
       <div className="max-w-[1240px] mx-auto flex flex-col justify-center h-full">
         <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Skills
@@ -35,7 +41,7 @@ const Skills = () => {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

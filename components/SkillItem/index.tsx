@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 type SkillItemProps = {
   image: string
@@ -7,7 +8,15 @@ type SkillItemProps = {
 
 const SkillItem = ({ image, title }: SkillItemProps) => {
   return (
-    <div className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300">
+    <motion.article
+      initial={{
+        y: -100,
+        opacity: 0
+      }}
+      transition={{ duration: 1.2 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      className="p-6 shadow-xl rounded-xl"
+    >
       <div className="grid grid-cols-2 gap-4 justify-center items-center">
         <div className="m-auto">
           <Image src={image} width="64px" height="64px" alt="Html" />
@@ -17,7 +26,7 @@ const SkillItem = ({ image, title }: SkillItemProps) => {
           <h3>{title}</h3>
         </div>
       </div>
-    </div>
+    </motion.article>
   )
 }
 
