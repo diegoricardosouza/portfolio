@@ -1,10 +1,17 @@
 import { AiOutlineMail } from 'react-icons/ai'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
+import { Cursor, useTypewriter } from 'react-simple-typewriter'
 
 const Main = () => {
+  const [text, count] = useTypewriter({
+    words: ['Front-End Developer', 'Back-End Developer', 'FullStack Developer'],
+    loop: true,
+    delaySpeed: 2000
+  })
+
   return (
-    <div id="home" className="w-full h-screen text-center">
+    <div className="w-full h-screen text-center">
       <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
         <div>
           <p className="uppercase text-sm tracking-widest text-gray-600">
@@ -14,7 +21,10 @@ const Main = () => {
           <h1 className="py-4 text-gray-700">
             Oi, Eu sou <span className="text-[#5651e5]">Diego</span>
             <span className="py-2 text-gray-700 block">
-              FullStack Developer
+              {text}
+              <span className="font-normal">
+                <Cursor />
+              </span>
             </span>
           </h1>
 
