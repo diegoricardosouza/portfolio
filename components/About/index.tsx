@@ -26,9 +26,9 @@ const About = () => {
 
           <p className="py-2 text-gray-600">
             Eu iniciei como desenvolvedor web em 2012, trabalhando com Front-end
-            e Back-end, tenho experiência no CMS Wordpress que já fiz diversas
-            aplicações, já fiz também algumas aplicações utilizando laravel e
-            outras tecnologias.
+            e Back-end, tenho experiência em Laravel, React, Javascript,
+            Wordpress que já fiz diversas aplicações, já fiz também algumas
+            aplicações utilizando outras tecnologias.
           </p>
 
           <p className="py-2 text-gray-600 underline cursor-pointer">
