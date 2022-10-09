@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { motion } from 'framer-motion'
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
-import { motion } from 'framer-motion'
 
 const Navbar = () => {
   const [nav, setNav] = useState(false)
@@ -102,7 +102,7 @@ const Navbar = () => {
             </li>
 
             <li className="ml-10 text-sm uppercase hover:border-b">
-              <a href="/#about">Sobre</a>
+              <Link href="/#about">Sobre</Link>
             </li>
 
             <li className="ml-10 text-sm uppercase hover:border-b">
@@ -171,7 +171,7 @@ const Navbar = () => {
               </li>
 
               <li onClick={() => setNav(false)} className="py-4 text-sm">
-                <a href="/#about">Sobre</a>
+                <Link href="#about">Sobre</Link>
               </li>
 
               <li onClick={() => setNav(false)} className="py-4 text-sm">
