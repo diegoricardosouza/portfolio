@@ -8,17 +8,32 @@ import Skills from '../components/Skills'
 
 const Home: NextPage = () => {
   return (
+    // <div className="h-screen snap-y snap-mandatory overflow-y-scroll z-0 overflow-x-hidden">
     <div>
       <Head>
         <title>Diego Ricardo - FullStack Developer</title>
       </Head>
 
       <main className="px-[7px] md:px-0">
-        <Main />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
+        <section id="home">
+          <Main />
+        </section>
+
+        <section id="about">
+          <About />
+        </section>
+
+        <section id="skills">
+          <Skills />
+        </section>
+
+        <section id="projects">
+          <Projects />
+        </section>
+
+        <section id="contact">
+          <Contact />
+        </section>
       </main>
     </div>
   )
