@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import { AiOutlineMail } from 'react-icons/ai'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
@@ -8,7 +9,12 @@ import contactImg from '../../public/assets/contact.jpg'
 
 const Contact = () => {
   return (
-    <div id="contact" className="w-full lg:h-screen">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1.5 }}
+      className="w-full lg:h-screen"
+    >
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
         <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Contato
@@ -17,7 +23,20 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-5 gap-8">
           {/* left */}
-          <div className="col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 rounded-xl p-4">
+          <motion.div
+            initial={{
+              x: -300,
+              opacity: 0
+            }}
+            transition={{
+              duration: 1
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0
+            }}
+            className="col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 rounded-xl p-4"
+          >
             <div className="lg:p-4 h-full">
               <div>
                 <Image
@@ -40,7 +59,13 @@ const Contact = () => {
                 <p className="uppercase pt-8">Conecte-se Comigo</p>
 
                 <div className="flex items-center justify-between py-4">
-                  <a
+                  <motion.a
+                    initial={{
+                      y: -100,
+                      opacity: 0
+                    }}
+                    transition={{ delay: 1, duration: 1.2 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     href="https://www.linkedin.com/in/diego-ricardo-de-souza/"
                     target="_blank"
                     rel="noreferrer"
@@ -48,8 +73,15 @@ const Contact = () => {
                     <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                       <FaLinkedinIn />
                     </div>
-                  </a>
-                  <a
+                  </motion.a>
+
+                  <motion.a
+                    initial={{
+                      y: -100,
+                      opacity: 0
+                    }}
+                    transition={{ delay: 1, duration: 1.5 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     href="https://github.com/diegoricardosouza"
                     target="_blank"
                     rel="noreferrer"
@@ -57,24 +89,55 @@ const Contact = () => {
                     <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                       <FaGithub />
                     </div>
-                  </a>
-                  <a href="/#contact">
+                  </motion.a>
+
+                  <motion.a
+                    initial={{
+                      y: -100,
+                      opacity: 0
+                    }}
+                    transition={{ delay: 1, duration: 1.8 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    href="/#contact"
+                  >
                     <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                       <AiOutlineMail />
                     </div>
-                  </a>
-                  <a href="/#about">
+                  </motion.a>
+
+                  <motion.a
+                    initial={{
+                      y: -100,
+                      opacity: 0
+                    }}
+                    transition={{ delay: 1, duration: 2.1 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    href="/#about"
+                  >
                     <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                       <BsFillPersonLinesFill />
                     </div>
-                  </a>
+                  </motion.a>
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* right */}
-          <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4">
+          <motion.div
+            initial={{
+              x: 300,
+              opacity: 0
+            }}
+            transition={{
+              duration: 1
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0
+            }}
+            className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4"
+          >
             <div className="p-4">
               <form>
                 <div className="grid md:grid-cols-2 gap-4 w-full py-2">
@@ -124,7 +187,7 @@ const Contact = () => {
                 </button>
               </form>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         <div className="flex justify-center py-12">
@@ -135,7 +198,7 @@ const Contact = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
