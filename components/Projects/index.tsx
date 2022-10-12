@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import ProjectItem from '../ProjectItem'
 import propertyImg from '../../public/assets/projects/property.jpg'
 import cryptoImg from '../../public/assets/projects/crypto.jpg'
@@ -6,7 +7,12 @@ import twitchImg from '../../public/assets/projects/twitch.jpg'
 
 const Projects = () => {
   return (
-    <div id="projects" className="w-full">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1.5 }}
+      className="w-full"
+    >
       <div className="max-w-[1240px] mx-auto px-2 py-16">
         <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Projetos
@@ -39,7 +45,7 @@ const Projects = () => {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

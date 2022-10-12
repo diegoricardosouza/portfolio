@@ -1,5 +1,6 @@
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 type ProjectItemProps = {
   title: string
@@ -13,7 +14,15 @@ const ProjectItem = ({
   projectUrl
 }: ProjectItemProps) => {
   return (
-    <div className="relative flex items-center justify-center h-[400px] w-full shadow-xl shadow-gray-400 rounded-xl p-4 group hover:bg-gradient-to-r from-[#5651e5] to-[#709dff]">
+    <motion.div
+      initial={{
+        y: -100,
+        opacity: 0
+      }}
+      transition={{ duration: 1.2 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      className="relative flex items-center justify-center h-[400px] w-full shadow-xl shadow-gray-400 rounded-xl p-4 group hover:bg-gradient-to-r from-[#5651e5] to-[#709dff]"
+    >
       <Image
         src={backgroundImg}
         alt={title}
@@ -32,7 +41,7 @@ const ProjectItem = ({
           </p>
         </Link>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
