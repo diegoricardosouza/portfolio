@@ -2,6 +2,7 @@ import { AiOutlineMail } from 'react-icons/ai'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
+import { motion } from 'framer-motion'
 
 const Main = () => {
   const [text, count] = useTypewriter({
@@ -11,14 +12,35 @@ const Main = () => {
   })
 
   return (
-    <div className="w-full h-screen text-center">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1.5 }}
+      className="w-full h-screen text-center"
+    >
       <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
         <div>
-          <p className="uppercase text-sm tracking-widest text-gray-600">
+          <motion.p
+            initial={{
+              y: -100,
+              opacity: 0
+            }}
+            transition={{ duration: 1 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="uppercase text-sm tracking-widest text-gray-600"
+          >
             Vamos construir algo incrível juntos
-          </p>
+          </motion.p>
 
-          <h1 className="py-4 text-gray-700">
+          <motion.h1
+            initial={{
+              x: -300,
+              opacity: 0
+            }}
+            transition={{ duration: 1 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className="py-4 text-gray-700"
+          >
             Oi, Eu sou <span className="text-[#5651e5]">Diego</span>
             <span className="py-2 text-gray-700 block">
               {text}
@@ -26,15 +48,29 @@ const Main = () => {
                 <Cursor />
               </span>
             </span>
-          </h1>
+          </motion.h1>
 
-          <p className="py-4 text-gray-600 max-w-[70%] m-auto">
+          <motion.p
+            initial={{
+              y: -100,
+              opacity: 0
+            }}
+            transition={{ duration: 1 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="py-4 text-gray-600 max-w-[70%] m-auto"
+          >
             Estou focado na criação de aplicações web front-end responsivas
             integrando com tecnologias de back-end.
-          </p>
+          </motion.p>
 
           <div className="flex items-center justify-between max-w-[330px] m-auto py-4">
-            <a
+            <motion.a
+              initial={{
+                y: -100,
+                opacity: 0
+              }}
+              transition={{ duration: 1.2 }}
+              whileInView={{ opacity: 1, y: 0 }}
               href="https://www.linkedin.com/in/diego-ricardo-de-souza/"
               target="_blank"
               rel="noreferrer"
@@ -42,8 +78,15 @@ const Main = () => {
               <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                 <FaLinkedinIn />
               </div>
-            </a>
-            <a
+            </motion.a>
+
+            <motion.a
+              initial={{
+                y: -100,
+                opacity: 0
+              }}
+              transition={{ duration: 1.5 }}
+              whileInView={{ opacity: 1, y: 0 }}
               href="https://github.com/diegoricardosouza"
               target="_blank"
               rel="noreferrer"
@@ -51,21 +94,39 @@ const Main = () => {
               <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                 <FaGithub />
               </div>
-            </a>
-            <a href="/#contact">
+            </motion.a>
+
+            <motion.a
+              initial={{
+                y: -100,
+                opacity: 0
+              }}
+              transition={{ duration: 1.8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              href="/#contact"
+            >
               <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                 <AiOutlineMail />
               </div>
-            </a>
-            <a href="/#about">
+            </motion.a>
+
+            <motion.a
+              initial={{
+                y: -100,
+                opacity: 0
+              }}
+              transition={{ duration: 2.1 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              href="/#about"
+            >
               <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                 <BsFillPersonLinesFill />
               </div>
-            </a>
+            </motion.a>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
