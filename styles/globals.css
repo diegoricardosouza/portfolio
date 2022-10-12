@@ -7,11 +7,23 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    @apply overflow-x-hidden
   }
 
   body {
     @apply bg-[#ecf0f3] text-[#1f2937] tracking-wide
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-[7px]
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-400/20
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#5651e5]
   }
 
   h1, h2, h3, h4, h5, h6 {
