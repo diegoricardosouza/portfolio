@@ -1,13 +1,38 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { SubmitHandler, useForm } from 'react-hook-form'
 import { motion } from 'framer-motion'
 import { AiOutlineMail } from 'react-icons/ai'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi'
 import contactImg from '../../public/assets/contact.jpg'
+import { ChangeEvent, useState } from 'react'
+import formatPhone from '../../utils/formatPhone'
+
+type Inputs = {
+  name: string
+  phone: string
+  email: string
+  subject: string
+  message: string
+}
 
 const Contact = () => {
+  const [phone, setPhone] = useState('')
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm<Inputs>()
+  const onSubmit: SubmitHandler<Inputs> = (formData) => {
+    window.location.href = `mailto:diegoricardoweb@gmail.com?assunto=${formData.subject}&telefone=${formData.phone}&body=Olá, meu nome é ${formData.name}. ${formData.message} (${formData.email})`
+  }
+
+  const handlePhoneChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setPhone(formatPhone(e.target.value))
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -139,37 +164,54 @@ const Contact = () => {
             className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4"
           >
             <div className="p-4">
-              <form>
+              <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="grid md:grid-cols-2 gap-4 w-full py-2">
                   <div className="flex flex-col">
-                    <label className="uppercase text-sm py-2">Nome</label>
+                    <label className="uppercase text-sm py-2">Nome*</label>
                     <input
                       type="text"
+                      {...register('name', { required: true })}
                       className="border-2 rounded-md p-3 flex border-gray-300 focus:border-[#5651e5] outline-none ease-in duration-300"
                     />
+                    {errors.name && (
+                      <p className="p-1 text-[14px] text-red-500">
+                        Campo de preenchimento obrigatório
+                      </p>
+                    )}
                   </div>
 
                   <div className="flex flex-col">
                     <label className="uppercase text-sm py-2">Telefone</label>
                     <input
                       type="tel"
+                      {...register('phone')}
+                      value={phone}
+                      onChange={handlePhoneChange}
+                      maxLength={15}
                       className="border-2 rounded-md p-3 flex border-gray-300 focus:border-[#5651e5] outline-none ease-in duration-300"
                     />
                   </div>
                 </div>
 
                 <div className="flex flex-col py-2">
-                  <label className="uppercase text-sm py-2">Email</label>
+                  <label className="uppercase text-sm py-2">Email*</label>
                   <input
                     type="email"
+                    {...register('email', { required: true })}
                     className="border-2 rounded-md p-3 flex border-gray-300 focus:border-[#5651e5] outline-none ease-in duration-300"
                   />
+                  {errors.email && (
+                    <p className="p-1 text-[14px] text-red-500">
+                      Por favor digite um email válido.
+                    </p>
+                  )}
                 </div>
 
                 <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2">Assunto</label>
                   <input
                     type="text"
+                    {...register('subject')}
                     className="border-2 rounded-md p-3 flex border-gray-300 focus:border-[#5651e5] outline-none ease-in duration-300"
                   />
                 </div>
@@ -177,6 +219,7 @@ const Contact = () => {
                 <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2">Mensagem</label>
                   <textarea
+                    {...register('message')}
                     className="border-2 rounded-md p-3 flex border-gray-300 focus:border-[#5651e5] outline-none ease-in duration-300"
                     rows={5}
                   ></textarea>
