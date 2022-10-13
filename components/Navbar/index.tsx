@@ -102,7 +102,7 @@ const Navbar = () => {
             </li>
 
             <li className="ml-10 text-sm uppercase hover:border-b">
-              <Link href="/#about">Sobre</Link>
+              <a href="/#about">Sobre</a>
             </li>
 
             <li className="ml-10 text-sm uppercase hover:border-b">
