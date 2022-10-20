@@ -1,12 +1,14 @@
-import type { NextPage } from 'next'
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import About from '../components/About'
 import Contact from '../components/Contact'
 import Main from '../components/Main'
 import Projects from '../components/Projects'
 import Skills from '../components/Skills'
+import client from '../graphql/client'
+import { GET_ABOUT } from '../graphql/queries'
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
     // <div className="h-screen snap-y snap-mandatory overflow-y-scroll z-0 overflow-x-hidden">
     <div>
@@ -39,4 +41,12 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export const getStaticProps: GetStaticProps = async () => {
+  const { abouts } = await client.request(GET_ABOUT)
+
+  console.log(abouts)
+
+  return {
+    props: {}
+  }
+}
