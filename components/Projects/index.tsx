@@ -26,7 +26,15 @@ const Projects = () => {
 
         <div>
           <Swiper
-            slidesPerView={2}
+            breakpoints={{
+              480: {
+                slidesPerView: 1
+              },
+              // when window width is >= 768px
+              1366: {
+                slidesPerView: 2
+              }
+            }}
             spaceBetween={30}
             autoplay={{
               delay: 4000,
