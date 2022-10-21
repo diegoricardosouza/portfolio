@@ -53,7 +53,15 @@
     @apply ease-in duration-300
   }
 
-  @media(max-width: 767px) {
+  .page-about__content p {
+    @apply py-2 text-gray-600
+  }
+
+  .page-about__content p a {
+    @apply py-2 text-gray-600 underline cursor-pointer
+  }
+
+  @media(max-width: 991px) {
     body {
       overflow-x: hidden;
     }

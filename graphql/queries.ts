@@ -1,5 +1,19 @@
 import { gql } from 'graphql-request'
 
+export const GET_INITIAL = gql`
+  query getInitial {
+    inicios {
+      title
+      name
+      subtitle
+      content
+      frases {
+        title
+      }
+    }
+  }
+`
+
 export const GET_ABOUT = gql`
   query getAbout {
     abouts {

@@ -1,8 +1,13 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import aboutImg from '../../public/assets/about.jpg'
+// import aboutImg from '../../public/assets/about.jpg'
 
-const About = () => {
+export type AboutProps = {
+  conteudo: string
+  imagem: string
+}
+
+const About = ({ conteudo, imagem }: AboutProps) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -30,29 +35,10 @@ const About = () => {
           </p>
           <h2 className="py-4">Quem sou eu</h2>
 
-          <p className="py-2 text-gray-600">
-            Eu me especializei na criação de aplicações front-end responsivas
-            para dispositivos móveis que se conectam com APIs e outras
-            tecnologias de back-end. Eu sou apaixonado por aprender novas
-            tecnologias e entender que há mais de uma maneira de realizar uma
-            tarefa. Embora eu seja mais proficiente na construção de aplicações
-            front-end usando HTML, CSS, Javascript e React, eu aprendo rápido e
-            posso pegar novas tecnologias conforme eu precise. Acredito que para
-            ser um grande desenvolvedor não é apenas usar uma linguagem
-            específica, mas sim escolher a melhor ferramenta para o seu
-            trabalho.
-          </p>
-
-          <p className="py-2 text-gray-600">
-            Eu iniciei como desenvolvedor web em 2012, trabalhando com Front-end
-            e Back-end, tenho experiência em Laravel, React, Javascript,
-            Wordpress que já fiz diversas aplicações, já fiz também algumas
-            aplicações utilizando outras tecnologias.
-          </p>
-
-          <p className="py-2 text-gray-600 underline cursor-pointer">
-            Confira alguns dos meus últimos projetos.
-          </p>
+          <div
+            className="page-about__content"
+            dangerouslySetInnerHTML={{ __html: conteudo }}
+          />
         </motion.div>
 
         <motion.div
@@ -67,9 +53,9 @@ const About = () => {
             opacity: 1,
             x: 0
           }}
-          className="w-full h-full m-auto shadow-xl shadow-gray-400 rounded-xl flex items-center justify-center p-4 relative"
+          className="w-full h-full min-h-[300px] m-auto shadow-xl shadow-gray-400 rounded-xl flex items-center justify-center p-4 relative"
         >
-          <Image src={aboutImg} className="rounded-xl" alt="/" />
+          <Image src={imagem} className="rounded-xl" alt="/" layout="fill" />
         </motion.div>
       </div>
     </motion.div>
