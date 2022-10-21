@@ -4,9 +4,21 @@ import { BsFillPersonLinesFill } from 'react-icons/bs'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import { motion } from 'framer-motion'
 
-const Main = () => {
+export type FraseProps = {
+  title: string
+}
+
+export type MainProps = {
+  title: string
+  name: string
+  subtitle: string
+  content: string
+  frases: FraseProps[]
+}
+
+const Main = ({ title, name, subtitle, content, frases }: MainProps) => {
   const [text, count] = useTypewriter({
-    words: ['Front-End Developer', 'Back-End Developer', 'FullStack Developer'],
+    words: frases?.map((frase) => frase.title),
     loop: true,
     delaySpeed: 2000
   })
@@ -29,7 +41,7 @@ const Main = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="uppercase text-sm tracking-widest text-gray-600"
           >
-            Vamos construir algo incrível juntos
+            {subtitle}
           </motion.p>
 
           <motion.h1
@@ -41,7 +53,7 @@ const Main = () => {
             whileInView={{ opacity: 1, x: 0 }}
             className="py-4 text-gray-700"
           >
-            Oi, Eu sou <span className="text-[#5651e5]">Diego</span>
+            {title} <span className="text-[#5651e5]">{name}</span>
             <span className="py-2 text-gray-700 block">
               {text}
               <span className="font-normal">
@@ -59,8 +71,7 @@ const Main = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="py-4 text-gray-600 max-w-[70%] m-auto"
           >
-            Estou focado na criação de aplicações web front-end responsivas
-            integrando com tecnologias de back-end.
+            {content}
           </motion.p>
 
           <div className="flex items-center justify-between max-w-[330px] m-auto py-4">
