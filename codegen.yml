@@ -1,0 +1,7 @@
+overwrite: true
+schema: "https://api-sa-east-1.hygraph.com/v2/cl97ngceo0ro401t6dqtj4ggx/master"
+documents: "graphql/queries.ts"
+generates:
+  graphql/generated/:
+    preset: "client"
+    plugins: []
