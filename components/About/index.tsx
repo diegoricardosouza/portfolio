@@ -53,9 +53,11 @@ const About = ({ conteudo, imagem }: AboutProps) => {
             opacity: 1,
             x: 0
           }}
-          className="w-full h-full min-h-[300px] m-auto shadow-xl shadow-gray-400 rounded-xl flex items-center justify-center p-4 relative"
+          className="w-full h-full m-auto shadow-xl shadow-gray-400 rounded-xl flex items-center justify-center p-4"
         >
-          <Image src={imagem} className="rounded-xl" alt="/" layout="fill" />
+          <div className="w-full h-full relative min-h-[300px]">
+            <Image src={imagem} className="rounded-xl" alt="/" layout="fill" />
+          </div>
         </motion.div>
       </div>
     </motion.div>
