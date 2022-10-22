@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
+import logoImg from '../../public/assets/navLogo.png'
 
 const Navbar = () => {
   const [nav, setNav] = useState(false)
@@ -71,12 +72,7 @@ const Navbar = () => {
         >
           <Link href="/">
             <a>
-              <Image
-                src="/../public/assets/navLogo.png"
-                alt="Logo"
-                width="125"
-                height="50"
-              />
+              <Image src={logoImg} alt="Logo" width="125" height="50" />
             </a>
           </Link>
         </motion.div>
@@ -140,12 +136,7 @@ const Navbar = () => {
             <div className="flex w-full items-center justify-between">
               <Link href="/">
                 <a>
-                  <Image
-                    src="/../public/assets/navLogo.png"
-                    alt="Logo"
-                    width="87"
-                    height="35"
-                  />
+                  <Image src={logoImg} alt="Logo" width="87" height="35" />
                 </a>
               </Link>
 
