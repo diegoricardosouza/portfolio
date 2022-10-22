@@ -20,7 +20,7 @@ const Skills = ({ skills }: SkillsProps) => {
         <h2 className="py-4">O que eu sei</h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {skills.map((skill) => (
+          {skills?.map((skill) => (
             <SkillItem
               key={skill.title}
               imagem={skill.imagem}

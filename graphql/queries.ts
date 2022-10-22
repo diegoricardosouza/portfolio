@@ -38,6 +38,19 @@ export const GET_SKILLS = gql`
   }
 `
 
+export const GET_PROJECTS = gql`
+  query getProjects {
+    projects {
+      title
+      slug
+      subtitle
+      imagem {
+        url
+      }
+    }
+  }
+`
+
 export const GET_PROJECT_BY_SLUG = gql`
   query getProjectBySlug($slug: String!) {
     project(where: { slug: $slug }) {

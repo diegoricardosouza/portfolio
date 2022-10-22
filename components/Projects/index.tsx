@@ -4,13 +4,13 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import { Pagination, Autoplay } from 'swiper'
 
-import ProjectItem from '../ProjectItem'
-import propertyImg from '../../public/assets/projects/property.jpg'
-import cryptoImg from '../../public/assets/projects/crypto.jpg'
-import netflixImg from '../../public/assets/projects/netflix.jpg'
-import twitchImg from '../../public/assets/projects/twitch.jpg'
+import ProjectItem, { ProjectItemProps } from '../ProjectItem'
 
-const Projects = () => {
+export type ProjectsProps = {
+  projects: ProjectItemProps[]
+}
+
+const Projects = ({ projects }: ProjectsProps) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -46,37 +46,16 @@ const Projects = () => {
             modules={[Pagination, Autoplay]}
             className="!pb-[60px] slide-projects"
           >
-            <SwiperSlide>
-              <ProjectItem
-                title="Property Finder"
-                backgroundImg={propertyImg}
-                projectUrl="/property"
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <ProjectItem
-                title="Crypto App"
-                backgroundImg={cryptoImg}
-                projectUrl="/crypto"
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <ProjectItem
-                title="Netflix"
-                backgroundImg={netflixImg}
-                projectUrl="/netflix"
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <ProjectItem
-                title="Twitch"
-                backgroundImg={twitchImg}
-                projectUrl="/twitch"
-              />
-            </SwiperSlide>
+            {projects?.map((project) => (
+              <SwiperSlide key={project.title}>
+                <ProjectItem
+                  title={project.title}
+                  imagem={project.imagem}
+                  slug={project.slug}
+                  subtitle={project.subtitle}
+                />
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>
