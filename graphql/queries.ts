@@ -27,6 +27,17 @@ export const GET_ABOUT = gql`
   }
 `
 
+export const GET_SKILLS = gql`
+  query getSkills {
+    skills {
+      title
+      imagem {
+        url
+      }
+    }
+  }
+`
+
 export const GET_PROJECT_BY_SLUG = gql`
   query getProjectBySlug($slug: String!) {
     project(where: { slug: $slug }) {

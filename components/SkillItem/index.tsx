@@ -1,12 +1,14 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
-type SkillItemProps = {
-  image: string
+export type SkillItemProps = {
+  imagem: {
+    url: string
+  }
   title: string
 }
 
-const SkillItem = ({ image, title }: SkillItemProps) => {
+const SkillItem = ({ imagem, title }: SkillItemProps) => {
   return (
     <motion.article
       initial={{
@@ -19,7 +21,7 @@ const SkillItem = ({ image, title }: SkillItemProps) => {
     >
       <div className="grid grid-cols-2 gap-4 justify-center items-center">
         <div className="m-auto">
-          <Image src={image} width="64px" height="64px" alt="Html" />
+          <Image src={imagem.url} width="64px" height="64px" alt="Html" />
         </div>
 
         <div className="flex flex-col items-center justify-center">
