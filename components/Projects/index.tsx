@@ -16,13 +16,13 @@ const Projects = ({ projects }: ProjectsProps) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="w-full"
+      className="w-full lg:h-screen p-2"
     >
-      <div className="max-w-[1240px] mx-auto px-2 py-16">
+      <div className="max-w-[1240px] mx-auto px-2 py-16 flex flex-col justify-center h-full">
         <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Projetos
         </p>
-        <h2 className="py-4">O que construí</h2>
+        <h2 className="py-4">Alguns que construí</h2>
 
         <div>
           <Swiper

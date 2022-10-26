@@ -162,7 +162,7 @@ const Navbar = () => {
               </li>
 
               <li onClick={() => setNav(false)} className="py-4 text-sm">
-                <Link href="#about">Sobre</Link>
+                <a href="/#about">Sobre</a>
               </li>
 
               <li onClick={() => setNav(false)} className="py-4 text-sm">
