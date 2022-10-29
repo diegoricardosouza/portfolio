@@ -9,6 +9,7 @@ import { HiOutlineChevronDoubleUp } from 'react-icons/hi'
 import contactImg from '../../public/assets/contact.jpg'
 import { ChangeEvent, useState } from 'react'
 import formatPhone from '../../utils/formatPhone'
+import Loader from '../Loader'
 
 type Inputs = {
   name: string
@@ -20,13 +21,33 @@ type Inputs = {
 
 const Contact = () => {
   const [phone, setPhone] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors }
   } = useForm<Inputs>()
-  const onSubmit: SubmitHandler<Inputs> = (formData) => {
-    window.location.href = `mailto:diegoricardoweb@gmail.com?assunto=${formData.subject}&telefone=${formData.phone}&body=Olá, meu nome é ${formData.name}. ${formData.message} (${formData.email})`
+  const onSubmit: SubmitHandler<Inputs> = async (formData) => {
+    setIsLoading(true)
+
+    const response = await fetch('api/contact', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+
+    const dataResponse = await response.json()
+    reset()
+    setPhone('')
+
+    console.log(dataResponse)
+
+    setIsLoading(false)
   }
 
   const handlePhoneChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -225,8 +246,11 @@ const Contact = () => {
                   ></textarea>
                 </div>
 
-                <button className="w-full p-4 text-gray-100 mt-4">
-                  Enviar Mensagem
+                <button
+                  className="w-full p-4 text-gray-100 mt-4 button-disabled"
+                  disabled={isLoading}
+                >
+                  {isLoading ? <Loader /> : 'Enviar Mensagem'}
                 </button>
               </form>
             </div>
