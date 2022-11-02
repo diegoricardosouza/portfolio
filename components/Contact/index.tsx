@@ -22,6 +22,7 @@ type Inputs = {
 const Contact = () => {
   const [phone, setPhone] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
 
   const {
     register,
@@ -45,7 +46,13 @@ const Contact = () => {
     reset()
     setPhone('')
 
-    console.log(dataResponse)
+    if (dataResponse.status === 200) {
+      setSuccess(true)
+
+      setTimeout(() => {
+        setSuccess(false)
+      }, 2500)
+    }
 
     setIsLoading(false)
   }
@@ -188,11 +195,14 @@ const Contact = () => {
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="grid md:grid-cols-2 gap-4 w-full py-2">
                   <div className="flex flex-col">
-                    <label className="uppercase text-sm py-2">Nome*</label>
+                    <label className="uppercase text-sm py-2" htmlFor="name">
+                      Nome*
+                    </label>
                     <input
                       type="text"
                       {...register('name', { required: true })}
                       className="border-2 rounded-md p-3 flex border-gray-300 focus:border-[#5651e5] outline-none ease-in duration-300"
+                      id="name"
                     />
                     {errors.name && (
                       <p className="p-1 text-[14px] text-red-500">
@@ -202,7 +212,9 @@ const Contact = () => {
                   </div>
 
                   <div className="flex flex-col">
-                    <label className="uppercase text-sm py-2">Telefone</label>
+                    <label className="uppercase text-sm py-2" htmlFor="phone">
+                      Telefone
+                    </label>
                     <input
                       type="tel"
                       {...register('phone')}
@@ -210,16 +222,20 @@ const Contact = () => {
                       onChange={handlePhoneChange}
                       maxLength={15}
                       className="border-2 rounded-md p-3 flex border-gray-300 focus:border-[#5651e5] outline-none ease-in duration-300"
+                      id="phone"
                     />
                   </div>
                 </div>
 
                 <div className="flex flex-col py-2">
-                  <label className="uppercase text-sm py-2">Email*</label>
+                  <label className="uppercase text-sm py-2" htmlFor="email">
+                    Email*
+                  </label>
                   <input
                     type="email"
                     {...register('email', { required: true })}
                     className="border-2 rounded-md p-3 flex border-gray-300 focus:border-[#5651e5] outline-none ease-in duration-300"
+                    id="email"
                   />
                   {errors.email && (
                     <p className="p-1 text-[14px] text-red-500">
@@ -229,20 +245,26 @@ const Contact = () => {
                 </div>
 
                 <div className="flex flex-col py-2">
-                  <label className="uppercase text-sm py-2">Assunto</label>
+                  <label className="uppercase text-sm py-2" htmlFor="subject">
+                    Assunto
+                  </label>
                   <input
                     type="text"
                     {...register('subject')}
                     className="border-2 rounded-md p-3 flex border-gray-300 focus:border-[#5651e5] outline-none ease-in duration-300"
+                    id="subject"
                   />
                 </div>
 
                 <div className="flex flex-col py-2">
-                  <label className="uppercase text-sm py-2">Mensagem</label>
+                  <label className="uppercase text-sm py-2" htmlFor="message">
+                    Mensagem
+                  </label>
                   <textarea
                     {...register('message')}
                     className="border-2 rounded-md p-3 flex border-gray-300 focus:border-[#5651e5] outline-none ease-in duration-300"
                     rows={5}
+                    id="message"
                   ></textarea>
                 </div>
 
@@ -252,6 +274,19 @@ const Contact = () => {
                 >
                   {isLoading ? <Loader /> : 'Enviar Mensagem'}
                 </button>
+
+                {success && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    className="flex flex-col pt-8 text-center"
+                  >
+                    <span className="bg-emerald-500 py-4 text-white rounded-md">
+                      Mensagem enviada com sucesso!
+                    </span>
+                  </motion.div>
+                )}
               </form>
             </div>
           </motion.div>

@@ -34,7 +34,7 @@ export default function (req: NextApiRequest, res: NextApiResponse) {
     if (err) {
       return res.status(404).json({ error: err })
     } else {
-      return res.status(200).json({ message: info })
+      return res.status(200).json({ status: 200, message: info })
     }
   })
 }
