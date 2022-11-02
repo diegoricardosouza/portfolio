@@ -39,8 +39,8 @@ export const GET_SKILLS = gql`
 `
 
 export const GET_PROJECTS = gql`
-  query getProjects {
-    projects {
+  query getProjects($first: Int) {
+    projects(first: $first) {
       title
       slug
       subtitle
@@ -67,6 +67,8 @@ export const GET_PROJECT_BY_SLUG = gql`
       }
       imagem {
         url
+        width
+        height
       }
     }
   }
