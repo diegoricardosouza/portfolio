@@ -16,7 +16,7 @@ const Navbar = () => {
   const router = useRouter()
 
   useEffect(() => {
-    if (router.asPath == '/property') {
+    if (router.pathname == '/projeto/[slug]') {
       setNavBg('transparent')
       setLinkColor('#ecf0f3')
     } else {
@@ -33,8 +33,12 @@ const Navbar = () => {
     const handleShadow = () => {
       if (window.scrollY >= 90) {
         setShadow(true)
+        setNavBg('#ecf0f3')
+        setLinkColor('#1f2937')
       } else {
         setShadow(false)
+        setNavBg('transparent')
+        setLinkColor('#ecf0f3')
       }
     }
 
