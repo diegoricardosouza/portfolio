@@ -85,6 +85,7 @@ const Main = ({ title, name, subtitle, content, frases }: MainProps) => {
               href="https://www.linkedin.com/in/diego-ricardo-de-souza/"
               target="_blank"
               rel="noreferrer"
+              title="Linkedin Diego"
             >
               <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                 <FaLinkedinIn />
@@ -101,6 +102,7 @@ const Main = ({ title, name, subtitle, content, frases }: MainProps) => {
               href="https://github.com/diegoricardosouza"
               target="_blank"
               rel="noreferrer"
+              title="Github do Diego"
             >
               <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                 <FaGithub />
@@ -115,6 +117,7 @@ const Main = ({ title, name, subtitle, content, frases }: MainProps) => {
               transition={{ duration: 1.8 }}
               whileInView={{ opacity: 1, y: 0 }}
               href="/#contact"
+              title="Entre em contato"
             >
               <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                 <AiOutlineMail />
@@ -129,6 +132,7 @@ const Main = ({ title, name, subtitle, content, frases }: MainProps) => {
               transition={{ duration: 2.1 }}
               whileInView={{ opacity: 1, y: 0 }}
               href="/#about"
+              title="Sobre o Diego"
             >
               <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                 <BsFillPersonLinesFill />

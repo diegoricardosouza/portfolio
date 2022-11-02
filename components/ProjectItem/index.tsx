@@ -34,10 +34,10 @@ const ProjectItem = ({ title, imagem, slug, subtitle }: ProjectItemProps) => {
           {title}
         </h3>
         <p className="pb-4 pt-2 text-white text-center">{subtitle}</p>
-        <Link href={`projeto/${slug}`}>
+        <Link href={`projeto/${slug}`} title={title}>
           <a>
             <p className="text-center py-3 rounded-lg bg-white text-gray-700 font-bold text-lg cursor-pointer w-[143px] m-auto">
-              More Info
+              Ver Mais
             </p>
           </a>
         </Link>

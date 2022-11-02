@@ -74,7 +74,7 @@ const Navbar = () => {
             duration: 1
           }}
         >
-          <Link href="/">
+          <Link href="/" title="Logo">
             <a>
               <Image src={logoImg} alt="Logo" width="125" height="50" />
             </a>
@@ -98,23 +98,33 @@ const Navbar = () => {
         >
           <ul style={{ color: `${linkColor}` }} className="hidden md:flex">
             <li className="ml-10 text-sm uppercase hover:border-b">
-              <Link href="/">Home</Link>
+              <Link href="/" title="Home">
+                Home
+              </Link>
             </li>
 
             <li className="ml-10 text-sm uppercase hover:border-b">
-              <a href="/#about">Sobre</a>
+              <a href="/#about" title="Sobre">
+                Sobre
+              </a>
             </li>
 
             <li className="ml-10 text-sm uppercase hover:border-b">
-              <a href="/#skills">Skills</a>
+              <a href="/#skills" title="Skills">
+                Skills
+              </a>
             </li>
 
             <li className="ml-10 text-sm uppercase hover:border-b">
-              <a href="/#projects">Projetos</a>
+              <a href="/#projects" title="Projetos">
+                Projetos
+              </a>
             </li>
 
             <li className="ml-10 text-sm uppercase hover:border-b">
-              <a href="/#contact">Contato</a>
+              <a href="/#contact" title="Contato">
+                Contato
+              </a>
             </li>
           </ul>
 
@@ -162,23 +172,33 @@ const Navbar = () => {
           <div className="py-4 flex flex-col">
             <ul className="uppercase">
               <li onClick={() => setNav(false)} className="py-4 text-sm">
-                <Link href="/">Home</Link>
+                <Link href="/" title="Home">
+                  Home
+                </Link>
               </li>
 
               <li onClick={() => setNav(false)} className="py-4 text-sm">
-                <a href="/#about">Sobre</a>
+                <a href="/#about" title="Sobre">
+                  Sobre
+                </a>
               </li>
 
               <li onClick={() => setNav(false)} className="py-4 text-sm">
-                <a href="/#skills">Skills</a>
+                <a href="/#skills" title="Skills">
+                  Skills
+                </a>
               </li>
 
               <li onClick={() => setNav(false)} className="py-4 text-sm">
-                <a href="/#projects">Projetos</a>
+                <a href="/#projects" title="Projetos">
+                  Projetos
+                </a>
               </li>
 
               <li onClick={() => setNav(false)} className="py-4 text-sm">
-                <a href="/#contact">Contato</a>
+                <a href="/#contact" title="Contato">
+                  Contato
+                </a>
               </li>
             </ul>
 
@@ -192,6 +212,7 @@ const Navbar = () => {
                   href="https://www.linkedin.com/in/diego-ricardo-de-souza/"
                   target="_blank"
                   rel="noreferrer"
+                  title="Linkedin Diego"
                 >
                   <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
                     <FaLinkedinIn />
@@ -201,17 +222,18 @@ const Navbar = () => {
                   href="https://github.com/diegoricardosouza"
                   target="_blank"
                   rel="noreferrer"
+                  title="Github Diego"
                 >
                   <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
                     <FaGithub />
                   </div>
                 </a>
-                <a href="/#contact">
+                <a href="/#contact" title="Entre em contato">
                   <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
                     <AiOutlineMail />
                   </div>
                 </a>
-                <a href="/#about">
+                <a href="/#about" title="Sobre o Diego">
                   <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
                     <BsFillPersonLinesFill />
                   </div>
