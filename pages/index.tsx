@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next'
-import Head from 'next/head'
+import { NextSeo } from 'next-seo'
 import About, { AboutProps } from '../components/About'
 import Contact from '../components/Contact'
 import Main, { MainProps } from '../components/Main'
@@ -32,9 +32,26 @@ export default function Home({ about, initial, skills, projects }: HomeProps) {
   return (
     // <div className="h-screen snap-y snap-mandatory overflow-y-scroll z-0 overflow-x-hidden">
     <div className="w-full">
-      <Head>
-        <title>Diego Ricardo - FullStack Developer</title>
-      </Head>
+      <NextSeo
+        title="Diego Ricardo - FullStack Developer"
+        description="Estou focado na criação de aplicações web front-end responsivas integrando com tecnologias de back-end."
+        canonical="https://www.diegoricardoweb.dev"
+        openGraph={{
+          url: 'https://www.diegoricardoweb.dev',
+          title: 'Diego Ricardo - FullStack Developer',
+          description:
+            'Estou focado na criação de aplicações web front-end responsivas integrando com tecnologias de back-end.',
+          images: [
+            {
+              url: 'https://www.diegoricardoweb.dev/assets/cover.jpg',
+              width: 1280,
+              height: 720,
+              alt: 'Diego Ricardo - FullStack Developer'
+            }
+          ],
+          site_name: 'Diego Ricardo - FullStack Developer'
+        }}
+      />
 
       <main className="px-[7px] md:px-0">
         <section id="home">
@@ -89,6 +106,6 @@ export const getStaticProps: GetStaticProps = async () => {
       skills,
       projects
     },
-    revalidate: 10
+    revalidate: 60
   }
 }
