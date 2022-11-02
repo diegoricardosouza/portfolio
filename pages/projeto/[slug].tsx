@@ -85,7 +85,7 @@ export default function Page({
           </header>
         </div>
 
-        <div className="max-w-[1240px] mx-auto p-4 md:px-0 grid md:grid-cols-5 gap-8 pt-8">
+        <div className="max-w-[1240px] mx-auto p-4 md:px-0 md:grid md:grid-cols-5 gap-8 pt-8">
           <div className="col-span-4">
             <p>Projeto</p>
             <h2>Visão geral</h2>
@@ -101,7 +101,7 @@ export default function Page({
               target="_blank"
               rel="noreferrer"
             >
-              Demonstração
+              Demo
             </a>
 
             <a
@@ -114,7 +114,7 @@ export default function Page({
             </a>
           </div>
 
-          <div className="col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl p-4">
+          <div className="col-span-4 my-8 md:my-0 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl p-4">
             <div>
               <p className="text-center font-bold pb-2">Tecnologias</p>
 

@@ -1,0 +1,21 @@
+{
+  "name": "Diego Ricardo - FullStack Developer",
+  "short_name": "Diego Ricardo - FullStack Developer",
+  "icons": [
+    {
+      "src": "/assets/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "background_color": "#5651e5",
+  "description": "Estou focado na criação de aplicações web front-end responsivas integrando com tecnologias de back-end.",
+  "display": "fullscreen",
+  "start_url": "/",
+  "theme_color": "#5651e5"
+}

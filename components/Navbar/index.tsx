@@ -33,12 +33,12 @@ const Navbar = () => {
     const handleShadow = () => {
       if (window.scrollY >= 90) {
         setShadow(true)
-        setNavBg('#ecf0f3')
-        setLinkColor('#1f2937')
+        // setNavBg('#ecf0f3')
+        // setLinkColor('#1f2937')
       } else {
         setShadow(false)
-        setNavBg('transparent')
-        setLinkColor('#ecf0f3')
+        // setNavBg('transparent')
+        // setLinkColor('#ecf0f3')
       }
     }
 
@@ -76,7 +76,7 @@ const Navbar = () => {
         >
           <Link href="/" title="Logo">
             <a>
-              <Image src={logoImg} alt="Logo" width="125" height="50" />
+              <Image src={logoImg} alt="Logo" width="83" height="50" />
             </a>
           </Link>
         </motion.div>
