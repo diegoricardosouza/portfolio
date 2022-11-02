@@ -1,11 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
+/* eslint-disable no-undef */
+// eslint-disable-next-line @typescript-eslint/no-var-requires, no-undef
+const withPWA = require('next-pwa')({
+  dest: 'public'
+})
+
+module.exports = withPWA({
   images: {
     domains: ['media.graphassets.com']
   }
-}
-
-// eslint-disable-next-line no-undef
-module.exports = nextConfig
+})

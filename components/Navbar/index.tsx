@@ -76,7 +76,7 @@ const Navbar = () => {
         >
           <Link href="/" title="Logo">
             <a>
-              <Image src={logoImg} alt="Logo" width="125" height="50" />
+              <Image src={logoImg} alt="Logo" width="83" height="50" />
             </a>
           </Link>
         </motion.div>

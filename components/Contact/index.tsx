@@ -122,6 +122,7 @@ const Contact = () => {
                     href="https://www.linkedin.com/in/diego-ricardo-de-souza/"
                     target="_blank"
                     rel="noreferrer"
+                    title="Linkedin"
                   >
                     <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                       <FaLinkedinIn />
@@ -138,6 +139,7 @@ const Contact = () => {
                     href="https://github.com/diegoricardosouza"
                     target="_blank"
                     rel="noreferrer"
+                    title="Github Diego"
                   >
                     <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                       <FaGithub />
@@ -152,6 +154,7 @@ const Contact = () => {
                     transition={{ delay: 1, duration: 1.8 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     href="/#contact"
+                    title="Entre em contato"
                   >
                     <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                       <AiOutlineMail />
@@ -166,6 +169,7 @@ const Contact = () => {
                     transition={{ delay: 1, duration: 2.1 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     href="/#about"
+                    title="Sobre Diego"
                   >
                     <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                       <BsFillPersonLinesFill />
