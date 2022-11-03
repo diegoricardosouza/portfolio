@@ -54,7 +54,7 @@ export default function Page({
           title: `${title} - Diego Ricardo - FullStack Developer`,
           description:
             content ||
-            'AEstou focado na criação de aplicações web front-end responsivas integrando com tecnologias de back-end.',
+            'Estou focado na criação de aplicações web front-end responsivas integrando com tecnologias de back-end.',
           images: [
             {
               url: imagem.url,
@@ -118,7 +118,7 @@ export default function Page({
             <div>
               <p className="text-center font-bold pb-2">Tecnologias</p>
 
-              <div className="grid grid-cols-3 md:grid-cols-1">
+              <div className="grid grid-cols-2 md:grid-cols-1">
                 {technologies.map((item) => (
                   <p
                     key={item.name}
