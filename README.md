@@ -26,7 +26,7 @@ Dependências usadas no projeto:
 -  [Graphql Code Generator](https://www.the-guild.dev/graphql/codegen)
 
 
-Também foi adicionado a ferramenta [**ESLint**](https://eslint.org/) para aumentar a produtividade e auxiliar a manter um padrão de código.
+Também foi adicionado a ferramenta [**ESLint**](https://eslint.org/) e [**Prettier**](https://prettier.io/) para aumentar a produtividade e auxiliar a manter um padrão de código.
 
 ## 📥 Instalação e execução
 
