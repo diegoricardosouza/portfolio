@@ -2,9 +2,15 @@
   Meu Portfólio
 </h1>
 
+<p align="center">
+  <a href="https://www.diegoricardoweb.dev/" target="_blank">
+    <img src=".github/screenshot.jpg" />
+  </a>
+</p>
+
 ## 💻 Projeto
 
-Meu portfolio, mostrando alguns projetos e skills dominadas.
+Meu portfolio, falando algumas coisas sobre mim, meus contatos, skills que domino e alguns projetos desenvolvidos.
 
 Dependências usadas no projeto:
 
@@ -17,6 +23,7 @@ Dependências usadas no projeto:
 -  [Swiper](https://swiperjs.com/)
 -  [Graphql](https://graphql.org/)
 -  [Graph Cms](https://hygraph.com/)
+-  [Graphql Code Generator](https://www.the-guild.dev/graphql/codegen)
 
 
 Também foi adicionado a ferramenta [**ESLint**](https://eslint.org/) para aumentar a produtividade e auxiliar a manter um padrão de código.
