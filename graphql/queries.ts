@@ -28,8 +28,8 @@ export const GET_ABOUT = gql`
 `
 
 export const GET_SKILLS = gql`
-  query getSkills {
-    skills {
+  query getSkills($first: Int) {
+    skills(first: $first) {
       title
       imagem {
         url

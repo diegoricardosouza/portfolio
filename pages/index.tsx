@@ -87,7 +87,9 @@ export default function Home({ about, initial, skills, projects }: HomeProps) {
 export const getStaticProps: GetStaticProps = async () => {
   const { inicios } = await client.request<GetInitialQuery>(GET_INITIAL)
   const { abouts } = await client.request<GetAboutQuery>(GET_ABOUT)
-  const { skills } = await client.request<GetSkillsQuery>(GET_SKILLS)
+  const { skills } = await client.request<GetSkillsQuery>(GET_SKILLS, {
+    first: 16
+  })
   const { projects } = await client.request<GetProjectsQuery>(GET_PROJECTS)
 
   return {
